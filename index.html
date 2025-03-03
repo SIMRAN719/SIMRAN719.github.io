@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simran | AI Engineer</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f0f0f0;
+            --accent: #8c8c8c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 10L90 10L90 90L10 90Z' fill='none' stroke='%23333' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 20px;
+        }
+        
+        h1, h2, h3 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cat-ears {
+            position: absolute;
+            top: -100px;
+            width: 100%;
+            height: 300px;
+            z-index: -1;
+        }
+        
+        .ear {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 150px;
+            background-color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+        
+        .left-ear {
+            left: calc(50% - 150px);
+            transform: rotate(-30deg) skewX(20deg);
+        }
+        
+        .right-ear {
+            right: calc(50% - 150px);
+            transform: rotate(30deg) skewX(-20deg);
+        }
+        
+        .profile-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            position: relative;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .cat-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cat-eyes {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .eye {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .eye::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 22px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+        }
+        
+        .cat-nose {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .cat-mouth {
+            position: absolute;
+            top: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 10px;
+            border-bottom: 2px solid var(--primary);
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .whiskers {
+            position: absolute;
+            top: 120px;
+            width: 100%;
+        }
+        
+        .whisker {
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .whisker:nth-child(1) {
+            left: 30px;
+            transform: rotate(-10deg);
+        }
+        
+        .whisker:nth-child(2) {
+            left: 25px;
+            top: 15px;
+            transform: rotate(-5deg);
+        }
+        
+        .whisker:nth-child(3) {
+            right: 30px;
+            transform: rotate(10deg);
+        }
+        
+        .whisker:nth-child(4) {
+            right: 25px;
+            top: 15px;
+            transform: rotate(5deg);
+        }
+        
+        .name {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--secondary);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "=^..^=";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* About */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background-color: #282828;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 4rem;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--primary);
+            border: 1px solid var(--secondary);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .project-link:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .skill-item {
+            background-color: #282828;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--accent);
+        }
+        
+        /* Contact */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-link {
+            padding: 1rem 2rem;
+            background-color: #282828;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .contact-link:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #101010;
+            position: relative;
+        }
+        
+        .cat-tail {
+            position: absolute;
+            bottom: 0;
+            right: 20%;
+            width: 10px;
+            height: 100px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            transform: rotate(-45deg);
+            transform-origin: bottom;
+            animation: tail-wag 2s infinite alternate ease-in-out;
+        }
+        
+        @keyframes tail-wag {
+            0% {
+                transform: rotate(-45deg);
+            }
+            100% {
+                transform: rotate(-25deg);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cat-ears">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+        </div>
+        <div class="profile-circle">
+            <div class="cat-face">
+                <div class="cat-eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="cat-nose"></div>
+                <div class="cat-mouth"></div>
+                <div class="whiskers">
+                    <div class="whisker"></div>
+                    <div class="whisker"></div>
+                    <div class="whisker"></div>
+                    <div class="whisker"></div>
+                </div>
+            </div>
+        </div>
+        <h1 class="name">Simran</h1>
+        <p class="title">AI Engineer | 4th Year Student</p>
+        <div class="social-links">
+            <a href="https://github.com/SIMRAN719" class="social-link" target="_blank">GitHub</a>
+            <a href="https://twitter.com/simrannnn_19" class="social-link" target="_blank">Twitter</a>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Hello! I'm Simran, an AI Engineer at Turing and a 4th year student passionate about artificial intelligence and machine learning. I specialize in developing innovative AI solutions and exploring the endless possibilities of machine learning algorithms.</p>
+                <p>With a strong foundation in computer science and a deep interest in neural networks, I strive to create intelligent systems that can solve real-world problems and make a positive impact.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">⚙️</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Neural Network Framework</h3>
+                        <p class="project-desc">A lightweight deep learning framework built from scratch for educational purposes and experimentation.</p>
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">🔍</div>
+                    <div class="project-info">
+                        <h3 class="project-title">NLP Sentiment Analyzer</h3>
+                        <p class="project-desc">An advanced sentiment analysis tool using transformers to analyze customer feedback and social media content.</p>
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">🤖</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Reinforcement Learning Environment</h3>
+                        <p class="project-desc">A custom environment for training reinforcement learning agents with visualizations and performance metrics.</p>
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">PyTorch</div>
+                <div class="skill-item">Natural Language Processing</div>
+                <div class="skill-item">Computer Vision</div>
+                <div class="skill-item">Deep Learning</div>
+                <div class="skill-item">Neural Networks</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Data Science</div>
+                <div class="skill-item">Reinforcement Learning</div>
+                <div class="skill-item">Model Deployment</div>
+                <div class="skill-item">MLOps</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <p>I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out if you'd like to connect! I am mostly active on X</p>
+                <div class="contact-links">
+                    <a href="mailto:hasnarmis719.work@gmail.com" class="contact-link">Email Me</a>
+                    <a href="https://github.com/SIMRAN719" class="contact-link" target="_blank">GitHub</a>
+                    <a href="https://twitter.com/simrannnn_19" class="contact-link" target="_blank">Twitter / X</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="cat-tail"></div>
+        <p>&copy; 2025 Simran | Made with 🐾</p>
+    </footer>
+
+    <script>
+        // You can add JavaScript animations here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
