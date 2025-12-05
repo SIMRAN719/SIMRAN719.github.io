@@ -3,437 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simran | Delivery Data Analyst </title>
-    <style>
-        :root {
-            --primary: #1a1a1a;
-            --secondary: #f0f0f0;
-            --accent: #8c8c8c;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-        
-        body {
-            background-color: var(--primary);
-            color: var(--secondary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 10L90 10L90 90L10 90Z' fill='none' stroke='%23333' stroke-width='1'/%3E%3C/svg%3E");
-            background-size: 20px;
-        }
-        
-        h1, h2, h3 {
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Header */
-        header {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cat-ears {
-            position: absolute;
-            top: -100px;
-            width: 100%;
-            height: 300px;
-            z-index: -1;
-        }
-        
-        .ear {
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 150px;
-            background-color: var(--primary);
-            border: 2px solid var(--secondary);
-        }
-        
-        .left-ear {
-            left: calc(50% - 150px);
-            transform: rotate(-30deg) skewX(20deg);
-        }
-        
-        .right-ear {
-            right: calc(50% - 150px);
-            transform: rotate(30deg) skewX(-20deg);
-        }
-        
-        .profile-circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-color: var(--secondary);
-            position: relative;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        
-        .cat-face {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .cat-eyes {
-            position: absolute;
-            top: 60px;
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-        }
-        
-        .eye {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            position: relative;
-        }
-        
-        .eye::after {
-            content: "";
-            position: absolute;
-            top: 5px;
-            left: 22px;
-            width: 10px;
-            height: 10px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-        }
-        
-        .cat-nose {
-            position: absolute;
-            top: 110px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 15px;
-            height: 10px;
-            background-color: var(--primary);
-            border-radius: 50%;
-        }
-        
-        .cat-mouth {
-            position: absolute;
-            top: 130px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 10px;
-            border-bottom: 2px solid var(--primary);
-            border-radius: 0 0 20px 20px;
-        }
-        
-        .whiskers {
-            position: absolute;
-            top: 120px;
-            width: 100%;
-        }
-        
-        .whisker {
-            position: absolute;
-            width: 60px;
-            height: 2px;
-            background-color: var(--primary);
-        }
-        
-        .whisker:nth-child(1) {
-            left: 30px;
-            transform: rotate(-10deg);
-        }
-        
-        .whisker:nth-child(2) {
-            left: 25px;
-            top: 15px;
-            transform: rotate(-5deg);
-        }
-        
-        .whisker:nth-child(3) {
-            right: 30px;
-            transform: rotate(10deg);
-        }
-        
-        .whisker:nth-child(4) {
-            right: 25px;
-            top: 15px;
-            transform: rotate(5deg);
-        }
-        
-        .name {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--accent);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .social-link {
-            font-size: 1.2rem;
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--secondary);
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: "=^..^=";
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        
-        /* About */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .project-card {
-            background-color: #282828;
-            border: 2px solid var(--accent);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background-color: #3a3a3a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 4rem;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-desc {
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .project-link {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            background-color: var(--primary);
-            border: 1px solid var(--secondary);
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            transition: all 0.3s;
-        }
-        
-        .project-link:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-        }
-        
-        /* Skills */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .skill-item {
-            background-color: #282828;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            border: 1px solid var(--accent);
-        }
-        
-        /* Contact */
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .contact-link {
-            padding: 1rem 2rem;
-            background-color: #282828;
-            border: 2px solid var(--accent);
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-        
-        .contact-link:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-            border-color: var(--secondary);
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #101010;
-            position: relative;
-        }
-        
-        .cat-tail {
-            position: absolute;
-            bottom: 0;
-            right: 20%;
-            width: 10px;
-            height: 100px;
-            background-color: var(--secondary);
-            border-radius: 10px;
-            transform: rotate(-45deg);
-            transform-origin: bottom;
-            animation: tail-wag 2s infinite alternate ease-in-out;
-        }
-        
-        @keyframes tail-wag {
-            0% {
-                transform: rotate(-45deg);
-            }
-            100% {
-                transform: rotate(-25deg);
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                height: auto;
-                min-height: 100vh;
-            }
-            
-            .name {
-                font-size: 2.5rem;
-            }
-            
-            .title {
-                font-size: 1.2rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Simran</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <!-- <div class="nav-logo">≧◡≦</div> -->
+            <div class="nav-logo">(づ｡◕‿‿◕｡)づ</div>
+            <!-- <div class="nav-logo">(˶˃ ᵕ ˂˶)</div> -->
+            <!-- <div class="nav-logo">ฅ^>⩊<^ฅ</div> -->
+            <!-- <div class="nav-logo">꧁⎝ 𓆩༺✧༻𓆪 ⎠꧂</div> -->
+            <!-- <div class="nav-logo">ᕙ(  •̀ ᗜ •́  )ᕗ</div> -->
+            <!-- <div class="nav-logo">(⸝⸝ᵕᴗᵕ⸝⸝)</div> -->
+            <!-- <div class="nav-logo">(つ╥﹏╥)つ</div> -->
+
+            <div class="mobile-menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <!-- <li><a href="#writing">Writing</a></li> -->
+                <!-- <li><a href="#hobbies">Hobbies</a></li> -->
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
         <div class="cat-ears">
             <div class="ear left-ear"></div>
             <div class="ear right-ear"></div>
@@ -455,24 +60,34 @@
             </div>
         </div>
         <h1 class="name">Simran</h1>
-        <p class="title">Delivery Data Analyst | Final Year Student</p>
+        <!-- <p class="title">Delivery Data Analyst</p> -->
+
+        <!-- Social Links Section -->
         <div class="social-links">
-            <a href="https://github.com/SIMRAN719" class="social-link" target="_blank">GitHub</a>
-            <a href="https://twitter.com/simrannnn_19" class="social-link" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/in/simransah19" class="social-link" target="_blank">LinkedIn</a>
+            <a href="https://github.com/SIMRAN719" class="social-link" target="_blank"  rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/simransah19" class="social-link" target="_blank"  rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/simrannnn_19" class="social-link" target="_blank"  rel="noopener noreferrer">X</a>
+            <a href="https://www.instagram.com/cyanpicsque/" class="social-link" target="_blank"  rel="noopener noreferrer">Instagram</a>
+            <a href="https://medium.com/@oftensimran" class="social-link" target="_blank"  rel="noopener noreferrer">Medium</a>
         </div>
     </header>
     
+    <!-- About me Section -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>Hello! I'm Simran, an Delivery Data Analyst at Turing and a Final year student passionate about artificial intelligence and machine learning. I specialize in developing innovative AI solutions and exploring the endless possibilities of machine learning algorithms.</p>
-                <p>With a strong foundation in computer science and a deep interest in AI/ML, I strive to create intelligent systems that can solve real-world problems and make a positive impact.</p>
+                <p>Hey! I’m Simran 👋 someone who’s endlessly curious, big on ideas, and always exploring what technology can really do for people. I work as a Delivery Data Analyst at Turing, but honestly, that’s just one part of who I am. I’m the kind of person who loves understanding how things work. I enjoy building things that feel helpful, thoughtful, and creative.</p>
+
+                <p>But outside all the tech stuff, I’m someone who connects deeply through stories, conversations, and shared experiences. I love writing in a way that feels warm and real… the kind of writing that makes you feel like you already know me a little. I believe technology should feel the same personal, accessible, and human.</p>
+
+                <p>When I’m not coding or writing, you’ll find me lost in a good book, exploring new places, or just enjoying some quality time with friends and family. Life’s all about balance, right?</p>
+
             </div>
         </div>
     </section>
-    
+ 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
@@ -481,15 +96,31 @@
                     <div class="project-img">📑</div>
                     <div class="project-info">
                         <h3 class="project-title">Proposify</h3>
-                        <p class="project-desc">AProposify is a powerful Streamlit application designed to help you generate comprehensive Business Requirements Documents or Proposal files.</p>
+                        <p class="project-desc">Proposify is a powerful Streamlit application designed to help you generate comprehensive Business Requirements Documents or Proposal files.</p>
                         <a href="https://github.com/SIMRAN719/Proposify" class="p1-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">⚡</div>
+                    <div class="project-info">
+                        <h3 class="project-title">SPARC</h3>
+                        <p class="project-desc">SPARC is an AI-driven intelligence system that helps to understand a candidate’s professional footprint by analyzing LinkedIn and GitHub profiles.</p>
+                        <a href="https://github.com/SIMRAN719/SPARC" class="p1-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">🔐</div>
+                    <div class="project-info">
+                        <h3 class="project-title">Encryptex</h3>
+                        <p class="project-desc">Encryptex is an interactive web application that brings the art of cryptography to life. Encryptex makes cryptography accessible, visual, and fun.</p>
+                        <a href="https://github.com/SIMRAN719/Encryptex" class="p1-link">GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">📔</div>
                     <div class="project-info">
-                        <h3 class="project-title">TCG - Test Case Generator</h3>
-                        <p class="project-desc">TCG is an application designed for generating test cases based on uploaded files or user-provided requirements. It utilizes a combination of language processing techniques and AI models to automate the test case generation processs.</p>
+                        <h3 class="project-title">Test Case Generator</h3>
+                        <p class="project-desc">TCG is an application designed for generating test cases based user-provided requirements. It utilizes language processing techniques and AI models to automate the test case generation processs.</p>
                         <a href="https://github.com/SIMRAN719/TCG" class="p2-link">GitHub</a>
                     </div>
                 </div>
@@ -497,7 +128,7 @@
                     <div class="project-img">🔍</div>
                     <div class="project-info">
                         <h3 class="project-title">Swiggy Analysis</h3>
-                        <p class="project-desc">This project is an in-depth exploration and analysis of the popular food delivery platform, Swiggy. With a focus on major cities in India, this project aims to unveil key insights into customer behavior, ordering patterns, and overall service performance.</p>
+                        <p class="project-desc">This project is an in-depth exploration and analysis of the popular food delivery platform, Swiggy. With a focus on major cities in India, this project aims to unveil key insights.</p>
                         <a href="https://github.com/SIMRAN719/Swiggy_Analysis" class="p3-link">GitHub</a>
                     </div>
                 </div>
@@ -505,7 +136,7 @@
                     <div class="project-img">🤖</div>
                     <div class="project-info">
                         <h3 class="project-title">Real Estate Price Prediction</h3>
-                        <p class="project-desc">This project aims to predict real estate prices using machine learning, the predictive model takes into account various features related to properties, locations, and market trends to provide accurate and reliable price estimates.</p>
+                        <p class="project-desc">It aims to predict real estate prices using machine learning across the city of Pune, it uses various features related to properties to provide accurate and reliable price estimates.</p>
                         <a href="https://github.com/SIMRAN719/Real-Estate-Price-Prediction" class="p4-link">GitHub</a>
                     </div>
                 </div>
@@ -513,12 +144,15 @@
         </div>
     </section>
     
+    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
                 <div class="skill-item">Python</div>
+                <div class="skill-item">Artificial Intelligence</div>
                 <div class="skill-item">Langchain</div>
+                <div class="skill-item">Generative AI</div>
                 <div class="skill-item">Flask</div>
                 <div class="skill-item">Natural Language Processing</div>
                 <div class="skill-item">Django</div>
@@ -527,20 +161,20 @@
                 <div class="skill-item">Machine Learning</div>
                 <div class="skill-item">Data Science</div>
                 <div class="skill-item">Reinforcement Learning</div>
-                <div class="skill-item">MLOps</div>
+                <div class="skill-item">Linux</div>
             </div>
         </div>
     </section>
     
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-container">
-                <p>I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out if you'd like to connect! I am mostly active on X</p>
+                <p>I'm always open to new opportunities, collaborations, and interesting projects. Feel free to reach out if you'd like to connect!</p>
                 <div class="contact-links">
-                    <a href="mailto:hasnarmis719.work@gmail.com" class="contact-link">Email Me</a>
-                    <a href="https://github.com/SIMRAN719" class="contact-link" target="_blank">GitHub</a>
-                    <a href="https://twitter.com/simrannnn_19" class="contact-link" target="_blank">Twitter / X</a>
+                    <a href="mailto:hasnarmis719.work@gmail.com" class="contact-link"  rel="noopener noreferrer">Email Me</a>
+                    <a href="https://www.linkedin.com/in/simransah19" class="contact-link" target="_blank"  rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -548,10 +182,10 @@
     
     <footer>
         <div class="cat-tail"></div>
-        <p>&copy; 2025 Simran | Made with 🐾</p>
+        <p>&copy; Simran | Made with 🐾</p>
     </footer>
 
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -561,6 +195,44 @@
                     });
                 });
             });
+        });
+    </script> -->
+
+    <script>
+        // Smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navHeight = 70;
+                        const targetPosition = target.offsetTop - navHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        document.getElementById('navLinks').classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 </body>
