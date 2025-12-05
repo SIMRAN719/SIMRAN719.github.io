@@ -60,6 +60,60 @@ a:hover {
     padding: 0 2rem;
 }
 
+        /* Canvas backgrounds*/
+        .section-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; 
+            pointer-events: none;
+        }
+        header,
+        section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #skills, #contact {
+            min-height: 400px;
+        }
+
+        .skills-container, .contact-container {
+            position: relative;
+            z-index: 1; 
+        }
+
+        #skills, #contact {
+            min-height: 500px; 
+        }
+
+        @media (max-width: 768px) {
+            #home {
+                padding-top: 6rem;  
+                padding-bottom: 4rem;
+                min-height: 100vh; 
+                box-sizing: border-box;
+            }
+
+            .home-content {
+                text-align: center;
+                padding: 0 1.2rem;
+                position: relative;
+                z-index: 3; 
+            }
+
+            .home-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .home-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
         /* Navigation Bar */
         nav {
             position: fixed;
@@ -127,6 +181,8 @@ a:hover {
             padding: 0 2rem;
         }
 
+
+        
 /* Header */
 header {
     position: relative;
